@@ -7,71 +7,6 @@
  $(document).ready(function(){
   console.log("App.js ONLINE");
 
-/*const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  }*/
-
-//   const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": {
-//         "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-//         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-//         "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-//       },
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": {
-//         "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-//         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-//         "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-//       },
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   },
-//   {
-//     "user": {
-//       "name": "Johann von Goethe",
-//       "avatars": {
-//         "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-//         "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-//         "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-//       },
-//       "handle": "@johann49"
-//     },
-//     "content": {
-//       "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-//     },
-//     "created_at": 1461113796368
-//   }
-// ];
-
-
-
   function createTweetElement(tweetData){
 
     console.log("test 123");
@@ -98,7 +33,7 @@ function renderTweets(history){
 
   history.forEach(function(content){
     var $tweet = createTweetElement(content);
-    $('.tweetsection').append($tweet);
+    $('.tweetsection').prepend($tweet);
   })
 };
 
@@ -110,9 +45,11 @@ function renderTweets(history){
     $button.on("click", function(event){
       event.preventDefault();
       console.log("Clickity Click")
-     // console.log($("#txtarea").val());
-     // console.log($("#txtarea").serialize());
-
+      if($("#txtarea").val().length === 0){
+        alert("Your Tweet is empty! No one is ever thinking about 'nothing'")
+      } else if($("#txtarea").val().length > 139){
+        alert("Your thoughts are too big for a tweet!")
+      } else {
         $.ajax({
           type: "POST",
           url: "/tweets",
@@ -121,8 +58,7 @@ function renderTweets(history){
             loadTweets()
           }
         })
-
-
+      }
     })
   })
 
