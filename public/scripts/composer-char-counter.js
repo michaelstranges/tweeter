@@ -16,13 +16,4 @@ $(document).ready(function(){
         $(this).siblings(".counter").css("color", "#244751")
       }
   })
-
-
-
-
-
-
-
-
-
 });
