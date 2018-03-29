@@ -20,7 +20,7 @@
         <p id="user">${tweetData.user.handle}</p>
       </header>
       <body>
-        <p id="thebody">${tweetData.content.text}</p>
+        <p id="thebody">${escape(tweetData.content.text)}</p>
       </body>
       <footer>
         <p id="age">${tweetData.created_at}</p>
@@ -45,6 +45,8 @@ function renderTweets(history){
     $button.on("click", function(event){
       event.preventDefault();
       console.log("Clickity Click")
+      console.log($("#txtarea").val()) //exact info entered
+
       if($("#txtarea").val().length === 0){
         alert("Your Tweet is empty! No one is ever thinking about 'nothing'")
       } else if($("#txtarea").val().length > 139){
@@ -67,12 +69,17 @@ function loadTweets(){
     url: "http://localhost:8080/tweets",
     type: "GET",
     success: function(serverdata){
-      console.log(serverdata);
       renderTweets(serverdata);
     }
   })
 }
 
 loadTweets()
+
+function escape(string){
+  var div = document.createElement("div");
+  div.appendChild(document.createTextNode(string));
+  return div.innerHTML;
+}
 
 });
