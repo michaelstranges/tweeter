@@ -76,6 +76,13 @@ function loadTweets(){
 
 loadTweets()
 
+//Toggles the "Compose Tweet" box to slidse in/out and focus on text box
+
+$(".compose").click(function(){
+  $(".new-tweet").slideToggle();
+  $("textarea").focus();
+})
+
 function escape(string){
   var div = document.createElement("div");
   div.appendChild(document.createTextNode(string));
