@@ -14,6 +14,7 @@
   width: 360px;
   left: 10px;
   padding-left: 5px;
+  max-width: 360px;
 
 }
 
@@ -38,18 +39,6 @@
 
 }
 
-.tweet {
-
-  margin: auto;
-  width: 384px;
-  height: 200px;
-  border: 2px solid;
-  border-radius: 5px;
-  background-color: white;
-  margin-top: 20px;
-  opacity: 0.6;
-
-}
 
 .tweet .tweet-logo{
 
@@ -80,6 +69,8 @@
 
   position: relative;
   height: 70px;
+  background-color: white;
+  opacity: 1.0;
 
 }
 
@@ -105,7 +96,7 @@
 
   position: relative;
   height: 50px;
-  border-top: 1px solid;
+  border-top: 1px solid #eee;
 
 }
 
@@ -116,16 +107,68 @@
 
 }
 
-.tweet:hover {
-  opacity: 1.0;
-
-}
-
-/*#age {
+.svg-inline--fa.fa-heart.fa-w-16 {
 
   position: relative;
-  padding-top:5px;
-  border-top: 1px solid;
+  float: right;
+  bottom: 42px;
+  right: 10px;
+  opacity: 0;
 
 }
-*/
+
+.svg-inline--fa.fa-flag.fa-w-16{
+
+  position: relative;
+  float: right;
+  bottom: 42px;
+  right: 43px;
+  opacity: 0;
+
+}
+
+.svg-inline--fa.fa-retweet.fa-w-20{
+
+  position: relative;
+  float: right;
+  bottom: 42px;
+  right: 0px;
+  opacity: 0;
+
+}
+
+.tweet {
+
+  margin: auto;
+  width: 384px;
+  height: 200px;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.tweet header {
+  opacity: 0.6;
+}
+
+.tweet:hover .svg-inline--fa.fa-heart.fa-w-16 {
+  opacity: 1.0;
+}
+
+.tweet:hover .svg-inline--fa.fa-flag.fa-w-16 {
+  opacity: 1.0;
+}
+
+.tweet:hover .svg-inline--fa.fa-retweet.fa-w-20 {
+  opacity: 1.0;
+}
+
+.tweet:hover {
+  opacity: 1.0;
+  border: 2px solid black;
+}
+
+.tweet:hover header{
+  opacity: 1.0;
+}

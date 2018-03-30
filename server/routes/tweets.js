@@ -43,4 +43,20 @@ module.exports = function(DataHelpers) {
 
   return tweetsRoutes;
 
+  // function timeUpdate(actualTime){
+  //   let seconds = actualTime - Date.now();
+  //   let postTime = "";
+  //   if(seconds < 60000){
+  //     postTime = `Posted: ${seconds/1000}seconds ago`;
+  //   } else if(seconds >= 60000 && seconds < 3600000){
+  //     postTime = `Posted: ${(seconds/1000)/60} minutes ago`;
+  //   } else if(seconds >= 3600000 && seconds < 86400000){
+  //     postTime = `Posted: ${((seconds/1000)/60)/24} hours ago`
+  //   } else {
+  //     postTime = `Posted: ${seconds/86400000} days ago`
+  //   }
+
+  //   return postTime;
+
 }
+

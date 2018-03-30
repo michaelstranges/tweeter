@@ -24,6 +24,9 @@
       </body>
       <footer>
         <p id="age">${tweetData.created_at}</p>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
       </footer>
     </article>`
 
@@ -36,9 +39,6 @@ function renderTweets(history){
     $('.tweetsection').prepend($tweet);
   })
 };
-
-//renderTweets(data);
-
 
   $(function(){
     var $button = $("#submit-button");

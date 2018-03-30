@@ -29,6 +29,10 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <!-- Font Awesome Free CDN for symbols -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -37,7 +41,7 @@
   <nav id="nav-bar">
     <img class="logo" src="/images/bird.png" >
     <span class="header">Tweeter</span>
-    <button class="compose">Compose</button>
+    <button class="compose"><div><i class="fas fa-edit"></i>Compose<div></button>
   </nav>
 
   <!-- Page-specific (main) content here -->
@@ -63,9 +67,11 @@
         <p id="thebody">This is the dummy tweet!!!</p>
       </body>
 
-
       <footer>
         <p id="age">This day!</p>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
       </footer>
 
     </article>
