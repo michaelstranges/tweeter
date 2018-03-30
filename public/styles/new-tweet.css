@@ -2,7 +2,7 @@
 
   background-color: #eee;
 
-  height: 140px;
+  height: 160px;
   margin: 2em;
   border: 2px solid;
   border-radius: 5px;
@@ -12,9 +12,13 @@
 
   position: relative;
   width: 360px;
+  height: 70px;
   left: 10px;
   padding-left: 5px;
   max-width: 360px;
+  max-height: 70px;
+  min-height: 70px;
+  min-width: 360px;
 
 }
 
