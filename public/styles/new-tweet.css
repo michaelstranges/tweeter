@@ -103,7 +103,8 @@
 .tweet footer p{
 
   position: relative;
-  bottom: 8.5px;
+  bottom: 5px;
+  font-size: 80%;
 
 }
 
@@ -111,7 +112,7 @@
 
   position: relative;
   float: right;
-  bottom: 42px;
+  bottom: 32px;
   right: 10px;
   opacity: 0;
 
@@ -121,7 +122,7 @@
 
   position: relative;
   float: right;
-  bottom: 42px;
+  bottom: 32px;
   right: 43px;
   opacity: 0;
 
@@ -131,7 +132,7 @@
 
   position: relative;
   float: right;
-  bottom: 42px;
+  bottom: 32px;
   right: 0px;
   opacity: 0;
 

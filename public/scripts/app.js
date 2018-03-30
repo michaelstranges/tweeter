@@ -7,9 +7,10 @@
  $(document).ready(function(){
   console.log("App.js ONLINE");
 
-  function createTweetElement(tweetData){
+  function createTweetElement(tweetData, callback){
 
-    console.log("test 123");
+    //sends tweetData.created_at to callback function to get time
+    let theTime = callback(tweetData.created_at);
 
     return `
 
@@ -23,7 +24,7 @@
         <p id="thebody">${escape(tweetData.content.text)}</p>
       </body>
       <footer>
-        <p id="age">${tweetData.created_at}</p>
+        <p id="age">${theTime}</p>
         <i class="fas fa-heart"></i>
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -35,7 +36,7 @@
 function renderTweets(history){
 
   history.forEach(function(content){
-    var $tweet = createTweetElement(content);
+    var $tweet = createTweetElement(content, timeUpdate); //sends timeupdate as a callback
     $('.tweetsection').prepend($tweet);
   })
 };
@@ -88,5 +89,25 @@ function escape(string){
   div.appendChild(document.createTextNode(string));
   return div.innerHTML;
 }
+
+//This function converts from unix time to sec/mins/hours/day
+//Function is used as a callback function in createTweetElement
+  function timeUpdate(postTime){
+    let seconds = Date.now() - postTime;
+    let properTime = "";
+
+    if(seconds < 60000){
+      properTime = `Posted: ${Math.round(seconds/1000)} second(s) ago`;
+    } else if(seconds >= 60000 && seconds < 3600000){
+      properTime = `Posted: ${Math.round((seconds/1000)/60)} minute(s) ago`;
+    } else if(seconds >= 3600000 && seconds < 86400000){
+      properTime = `Posted: ${Math.round(((seconds/1000)/60)/24)} hour(s) ago`
+    } else {
+      properTime = `Posted: ${Math.round(seconds/86400000)} day(s) ago`
+    }
+    return properTime;
+  }
+
+
 
 });
