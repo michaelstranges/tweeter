@@ -127,7 +127,7 @@
   position: relative;
   float: right;
   bottom: 32px;
-  right: 43px;
+  right: 48px;
   opacity: 0;
 
 }
@@ -137,7 +137,7 @@
   position: relative;
   float: right;
   bottom: 32px;
-  right: 0px;
+  right: 2px;
   opacity: 0;
 
 }
@@ -159,19 +159,22 @@
 
 .tweet:hover .svg-inline--fa.fa-heart.fa-w-16 {
   opacity: 1.0;
+  color: #00cfd4;
 }
 
 .tweet:hover .svg-inline--fa.fa-flag.fa-w-16 {
   opacity: 1.0;
+  color: #00cfd4;
 }
 
 .tweet:hover .svg-inline--fa.fa-retweet.fa-w-20 {
   opacity: 1.0;
+  color: #00cfd4;
 }
 
 .tweet:hover {
   opacity: 1.0;
-  border: 2px solid black;
+  border: 2px solid #bebebe;
 }
 
 .tweet:hover header{
