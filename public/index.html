@@ -1,83 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-  <!-- Roboto Condensed Font - 300, 300i, 700, 700i -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400i,700" rel="stylesheet" />
+    <!-- Roboto Condensed Font - 300, 300i, 700, 700i -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400i,700" rel="stylesheet" />
 
-  <!--- Nav CSS -->
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <!--- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <!-- New Tweet CSS -->
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
 
-  <!-- External JS -->
-  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-  <!-- Character Counter JS -->
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <!-- Tweet Box Hover -->
-  <script type="text/javascript" src="/scripts/tweetbox-hover.js"></script>
+    <!-- Character Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!-- Tweet Box Hover -->
+    <script type="text/javascript" src="/scripts/tweetbox-hover.js"></script>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
 
-  <!-- Font Awesome Free CDN for symbols -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!-- Font Awesome Free CDN for symbols -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-</head>
+  </head>
 
-<body>
+    <body>
+      <!-- Top nav bar (fixed) -->
+      <nav id="nav-bar">
+        <img class="logo" src="/images/bird.png" >
+        <span class="header">Tweeter</span>
+        <button class="compose"><div><i class="fas fa-edit"></i>Compose<div></button>
+      </nav>
 
-  <!-- Top nav bar (fixed) -->
-  <nav id="nav-bar">
-    <img class="logo" src="/images/bird.png" >
-    <span class="header">Tweeter</span>
-    <button class="compose"><div><i class="fas fa-edit"></i>Compose<div></button>
-  </nav>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+            <form method="POST" action="/tweets">
+              <textarea id="txtarea" name="text" placeholder="What's cookin'?"></textarea>
+              <input id="submit-button" type="submit" value="Tweet">
+              <span class="counter">140</span>
+            </form>
+        </section>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets">
-        <textarea id="txtarea" name="text" placeholder="What are you humming about?"></textarea>
-        <input id="submit-button" type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </form>
-    </section>
+        <section class="tweetsection">
+          <article class="tweet">
+            <header>
+              <img class="tweet-logo" src="/images/smile.jpg" >
+              <h2 id="screen-name">Tweeters Name</h2>
+              <p id="user">@user</p>
+            </header>
 
-    <section class="tweetsection">
-    <article class="tweet">
-      <header>
-        <img class="tweet-logo" src="/images/smile.jpg" >
-        <h2 id="screen-name">Tweeters Name</h2>
-        <p id="user">@user</p>
-      </header>
+            <body>
+              <p id="thebody">This is the dummy tweet!!!</p>
+            </body>
 
-      <body>
-        <p id="thebody">This is the dummy tweet!!!</p>
-      </body>
-
-      <footer>
-        <p id="age">This day!</p>
-        <i class="fas fa-heart"></i>
-        <i class="fas fa-flag"></i>
-        <i class="fas fa-retweet"></i>
-      </footer>
-
-    </article>
-    </section>
-
-
-  </main>
-</body>
-</html>
+            <footer>
+              <p id="age">This day!</p>
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+            </footer>
+          </article>
+        </section>
+      </main>
+    </body>
+  </html>

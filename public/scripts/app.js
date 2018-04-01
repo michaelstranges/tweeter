@@ -34,7 +34,6 @@
   }
 
 function renderTweets(history){
-
   history.forEach(function(content){
     var $tweet = createTweetElement(content, timeUpdate); //sends timeupdate as a callback
     $('.tweetsection').prepend($tweet);
@@ -78,7 +77,6 @@ function loadTweets(){
 loadTweets()
 
 //Toggles the "Compose Tweet" box to slidse in/out and focus on text box
-
 $(".compose").click(function(){
   $(".new-tweet").slideToggle();
   $("textarea").focus();
@@ -93,17 +91,30 @@ function escape(string){
 //This function converts from unix time to sec/mins/hours/day
 //Function is used as a callback function in createTweetElement
   function timeUpdate(postTime){
-    let seconds = Date.now() - postTime;
+    let mSeconds = Date.now() - postTime;
     let properTime = "";
+    let seconds = mSeconds/1000;
 
-    if(seconds < 60000){
-      properTime = `Posted: ${Math.round(seconds/1000)} second(s) ago`;
-    } else if(seconds >= 60000 && seconds < 3600000){
-      properTime = `Posted: ${Math.round((seconds/1000)/60)} minute(s) ago`;
-    } else if(seconds >= 3600000 && seconds < 86400000){
-      properTime = `Posted: ${Math.round(((seconds/1000)/60)/24)} hour(s) ago`
+    console.log(seconds)
+
+    if(seconds <= 1){
+      properTime = "Posted just now";
+    } else if(seconds > 1 && seconds < 60){
+      properTime = `Posted: ${Math.round(seconds)} seconds ago`;
+    } else if(seconds >= 60 && seconds < 120){
+      properTime = `Posted: ${Math.round((seconds)/60)} minute ago`;
+    } else if(seconds >= 120 && seconds < 3600){
+      properTime = `Posted: ${Math.round((seconds)/60)} minutes ago`;
+    } else if(seconds >= 3600 && seconds < 7200){
+      properTime = `Posted: ${Math.round(((seconds)/60)/60)} hour ago`;
+    } else if(seconds >= 7200 && seconds < 86400){
+      properTime = `Posted: ${Math.round(((seconds)/60)/60)} hours ago`;
+    } else if(seconds >= 86400 && seconds < 172800){
+      properTime = `Posted: ${Math.round(seconds/86400)} day ago`;
+    } else if(seconds >= 172800 && seconds < 31536000){
+      properTime = `Posted: ${Math.round(seconds/86400)} days ago`;
     } else {
-      properTime = `Posted: ${Math.round(seconds/86400000)} day(s) ago`
+      properTime = `Posted: ${Math.round((seconds/86400)/365)} year(s) ago`;
     }
     return properTime;
   }

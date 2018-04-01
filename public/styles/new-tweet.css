@@ -1,11 +1,11 @@
 .container .new-tweet{
 
   background-color: #eee;
-
   height: 160px;
   margin: 2em;
   border: 2px solid;
   border-radius: 5px;
+
 }
 
 .new-tweet textarea{
@@ -43,7 +43,6 @@
 
 }
 
-
 .tweet .tweet-logo{
 
   float:left;
@@ -54,12 +53,14 @@
   border-color: #eee;
 
 }
+
 .tweet header{
 
   height: 60px;
   background-color: #eee;
   padding-left: 10px;
   padding-top: 5px;
+
 }
 
 .tweet p{
@@ -85,7 +86,6 @@
   left: 10px;
 
 }
-
 
 #user{
 

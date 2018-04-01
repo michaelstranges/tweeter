@@ -12,6 +12,7 @@
 }
 
 #nav-bar .logo {
+
   float:left;
   height: 80px;
   width: 80px;
@@ -19,6 +20,7 @@
 }
 
 #nav-bar .header{
+
   float: left;
   padding-left: 10px;
   font-size: 2em ;
@@ -35,7 +37,7 @@
   background-color: white;
   font-size: 20px;
   text-align: center;
-  color: green;
+  color:  #00cfd4;
   opacity: 0.6;
   border: 0;
 
@@ -43,5 +45,6 @@
 
 #nav-bar .compose:hover{
   opacity: 1.0;
+  font-weight: bold;
 }
 
