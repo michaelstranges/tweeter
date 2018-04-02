@@ -44,14 +44,12 @@ function renderTweets(history){
     var $button = $("#submit-button");
     $button.on("click", function(event){
       event.preventDefault();
-      console.log("Clickity Click")
-      console.log($("#txtarea").val()) //exact info entered
 
       if($("#txtarea").val().length === 0){
         alert("Your Tweet is empty! No one is ever thinking about 'nothing'")
-      } else if($("#txtarea").val().length > 139){
+      }else if($("#txtarea").val().length > 139){
         alert("Your thoughts are too big for a tweet!")
-      } else {
+      }else {
         $.ajax({
           type: "POST",
           url: "/tweets",
